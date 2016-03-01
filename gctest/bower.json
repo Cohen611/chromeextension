@@ -1,0 +1,17 @@
+{
+  "name": "gctest",
+  "homepage": "https://github.com/Cohen611/chromeextension",
+  "description": "",
+  "main": "",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

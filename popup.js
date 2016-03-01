@@ -5,8 +5,8 @@ $(document).ready(function() {
  var cats = {
  url: 'https://www.reddit.com/r/StartledCats.json',
    init: function() {
-   cats.styling();
-    cats.events();
+     cats.styling();
+     cats.events();
    },
    styling: function() {
     cats.getRedditData();
@@ -16,24 +16,32 @@ $(document).ready(function() {
       event.preventDefault();
        var forward = $('input').val();
 
+
 });
 },
 
    getRedditData: function(subreddit) {
      if(subreddit) {
-       cats.url = "https://www.reddit.com/r/StartledCats" + subreddit + ".json"
+       cats.url = "https://www.reddit.com/r/" + subreddit + ".json";
      }
      $.ajax({
        method: 'GET',
        url: cats.url,
        success: function(cattitude) {
-      cats.addPostsToDOM(cattitude.data.url, $('#gif'));
+         console.log(cattitude);
+          cats.addPostsToDOM(cattitude.data.url,{}, $('section.container'));
 
-    }
+        }
      });
   },
-   addPostsToDOM: function(catsurl, data, $target) {
-   $target.html('');
-
- }
- };
+   addPostsToDOM: function(catsurl, sanitizedData, $target) {
+     $target.html('');
+//   console.dirxml($target);//
+var startledCats = "cats.url";
+    var htmlStr = "";
+    data.forEach(function(el) {
+      htmlStr += startledCats (el);
+    })
+    $target.html(htmlStr);
+  }
+};
